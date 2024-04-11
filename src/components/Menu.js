@@ -4,7 +4,8 @@ function Menu() {
 
     return (
         <div className="Menu">
-            <input type="text" placeholder="Name"/>
+            <label for="name">Enter your name:</label>
+            <input id="name" type="text" placeholder="Name"/>
             <button>Start Quiz</button>
         </div>
     )
