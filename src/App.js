@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <h1>Quiz App</h1>
-    {/* Wrap every component you want to have access to the state with the tag.provider & say which state you want to make global using value. Now, any changes made to this state will appear in every component, even those outside of Menu */}
+    {/* Wrap every component you want to have access to the state with the tag.Provider & say which state(s) you want to make global using value. Now, any changes made to this state will appear in every component that is inside of the Provider}
     {/* We can include userName & setUserName in the value as well. Now, we can also access these from whatever components are inside of the provider */}
       <GameStateContext.Provider value={{gameState, setGameState, userName, setUserName}}>
         {/* Conditionally render menu if state is equal to menu. 

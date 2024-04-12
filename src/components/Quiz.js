@@ -3,7 +3,7 @@ import "../App.css";
 function Quiz() {
 
     return (
-        <div>Quiz</div>
+        <div className="Quiz">Quiz</div>
     )
 }
 
