@@ -1,6 +1,9 @@
 import "../App.css";
 import { Questions } from "../helpers/Questions";
 import { useState } from "react";
+// imports required for access to global states:
+import { useContext } from "react";
+import {GameStateContext} from '../helpers/Contexts';
 
 function Quiz() {
     // A state to represent which question we are currently on. It will take a number & 0 is the default (for the first question)
@@ -8,6 +11,9 @@ function Quiz() {
 
     // A state to represent whichever answer we chose. Use a string
     const [optionChosen, setOptionChosen] = useState("");
+
+    // Required for access to global state variables
+    const { score, setScore } = useContext(GameStateContext);
 
     // Function we call each time an option is chosen. Set optionChosen equal to whatever option is passed in
     const chooseOption = (option) => {
@@ -18,10 +24,10 @@ function Quiz() {
     const nextQuestion = () => {
         // Compare to see if the answer was correct
         if (Questions[currentQuestion].answer === optionChosen) {
-            console.log("Correct");
-        } else {
-            console.log("Incorrect");
+            // console.log("Correct");
+            setScore(score + 1);
         }
+        // Don't need any else statement bc nothing happens to score if they guess wrong
 
         // Increment value of currentQuestion by 1
         setCurrentQuestion(currentQuestion + 1)
@@ -39,7 +45,8 @@ function Quiz() {
                 <button onClick={() => {chooseOption("optionD")}}>{Questions[currentQuestion].optionD}</button>
             </div>
             {/* {optionChosen} - Test that it shows the option chosen */}
-            <button onClick={nextQuestion}>Next Question</button>
+            {/* {score} */}
+            <button className="nextQuestion" onClick={nextQuestion}>Next Question</button>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import "../App.css";
 // import useContent hook
 import { useContext } from "react";
-// import game context
+// import game context in order to have access to global variables
 import {GameStateContext} from '../helpers/Contexts';
 
 function Menu() {
