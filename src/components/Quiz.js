@@ -14,6 +14,19 @@ function Quiz() {
         setOptionChosen(option);
     }
 
+    // Function to select choice & move onto next question
+    const nextQuestion = () => {
+        // Compare to see if the answer was correct
+        if (Questions[currentQuestion].answer === optionChosen) {
+            console.log("Correct");
+        } else {
+            console.log("Incorrect");
+        }
+
+        // Increment value of currentQuestion by 1
+        setCurrentQuestion(currentQuestion + 1)
+    }
+
     return (
         <div className="Quiz">
             {/* Target question's prompt property */}
@@ -26,6 +39,7 @@ function Quiz() {
                 <button onClick={() => {chooseOption("optionD")}}>{Questions[currentQuestion].optionD}</button>
             </div>
             {/* {optionChosen} - Test that it shows the option chosen */}
+            <button onClick={nextQuestion}>Next Question</button>
         </div>
     )
 }
