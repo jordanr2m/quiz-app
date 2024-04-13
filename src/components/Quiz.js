@@ -1,4 +1,5 @@
 import "../App.css";
+import { Questions } from "../helpers/Questions";
 
 function Quiz() {
 
