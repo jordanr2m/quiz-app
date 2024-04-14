@@ -37,6 +37,6 @@ export const Questions = [
         optionB: "Lincoln",
         optionC: "Fargo",
         optionD: "Grand Forks",
-        answer: "optionC"
+        answer: "optionA"
     }
 ]

@@ -13,7 +13,7 @@ function Quiz() {
     const [optionChosen, setOptionChosen] = useState("");
 
     // Required for access to global state variables
-    const { score, setScore, gameState, setGameState } = useContext(GameStateContext);
+    const { score, setScore, setGameState } = useContext(GameStateContext);
 
     // Function we call each time an option is chosen. Set optionChosen equal to whatever option is passed in
     const chooseOption = (option) => {
@@ -24,7 +24,7 @@ function Quiz() {
     const nextQuestion = () => {
         // Compare to see if the answer was correct
         if (Questions[currentQuestion].answer === optionChosen) {
-            // console.log("Correct");
+            console.log("Correct");
             setScore(score + 1);
         }
         // Don't need any else statement bc nothing happens to score if they guess wrong
@@ -34,6 +34,12 @@ function Quiz() {
     }
 
     const finishQuiz = () => {
+        // Check to see if the answer for the last question is correct
+        if (Questions[currentQuestion].answer === optionChosen) {
+            console.log("Correct");
+            setScore(score + 1);
+        }
+        // change gameState to finished
         setGameState("finished")
     }
 
@@ -58,6 +64,8 @@ function Quiz() {
                 // Move to the next question if it isn't the last one
                 <button className="nextQuestion" onClick={nextQuestion}>Next Question</button> 
             )}
+
+            <p>Question {currentQuestion + 1} / {Questions.length}</p>
         </div>
     )
 }

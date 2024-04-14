@@ -8,7 +8,6 @@ body {
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -21,6 +20,8 @@ body {
 .EndScreen {
   width: 500px;
   height: 500px;
+  padding: 20px;
+  box-sizing: border-box;
   color: white;
   border-radius: 10px;
   background-color: rgb(28, 41, 159);
@@ -66,6 +67,14 @@ button:focus {
   margin-top: 0;
 }
 
+.Quiz p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 10px 10px;
+  font-size: 0.9rem;
+}
+
 button.nextQuestion,
 button.finishQuiz {
   position: absolute;
@@ -75,7 +84,7 @@ button.finishQuiz {
   width: auto;
   height: auto;
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
   background: transparent;
   padding: 5px;
 }
@@ -85,4 +94,9 @@ button.finishQuiz:hover {
   background-color: rgb(168, 216, 254);
   color: black;
   transition: background 200ms ease-in;
+}
+
+/* === Finish screen styles === */
+button.restartQuiz {
+  margin-top: 45px;
 }

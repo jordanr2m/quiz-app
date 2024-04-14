@@ -6,7 +6,7 @@ import {GameStateContext} from '../helpers/Contexts';
 
 function Menu() {
     // get an instance of the context. This is all we need to do in order to have full access to these values
-    const {gameState, setGameState, userName, setUserName} = useContext(GameStateContext);
+    const {setGameState, setUserName} = useContext(GameStateContext);
 
     return ( 
         <div className="Menu">
