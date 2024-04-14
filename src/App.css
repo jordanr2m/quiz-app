@@ -17,7 +17,8 @@ body {
 }
 
 .Menu,
-.Quiz {
+.Quiz,
+.EndScreen {
   width: 500px;
   height: 500px;
   color: white;
@@ -65,7 +66,8 @@ button:focus {
   margin-top: 0;
 }
 
-button.nextQuestion {
+button.nextQuestion,
+button.finishQuiz {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -78,7 +80,8 @@ button.nextQuestion {
   padding: 5px;
 }
 
-button.nextQuestion:hover {
+button.nextQuestion:hover,
+button.finishQuiz:hover {
   background-color: rgb(168, 216, 254);
   color: black;
   transition: background 200ms ease-in;

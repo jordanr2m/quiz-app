@@ -13,7 +13,7 @@ function Quiz() {
     const [optionChosen, setOptionChosen] = useState("");
 
     // Required for access to global state variables
-    const { score, setScore } = useContext(GameStateContext);
+    const { score, setScore, gameState, setGameState } = useContext(GameStateContext);
 
     // Function we call each time an option is chosen. Set optionChosen equal to whatever option is passed in
     const chooseOption = (option) => {
@@ -33,6 +33,10 @@ function Quiz() {
         setCurrentQuestion(currentQuestion + 1)
     }
 
+    const finishQuiz = () => {
+        setGameState("finished")
+    }
+
     return (
         <div className="Quiz">
             {/* Target question's prompt property */}
@@ -46,7 +50,14 @@ function Quiz() {
             </div>
             {/* {optionChosen} - Test that it shows the option chosen */}
             {/* {score} */}
-            <button className="nextQuestion" onClick={nextQuestion}>Next Question</button>
+
+            {/* See if the currentQuestion is the final question */}
+            {currentQuestion === Questions.length - 1 ? (
+                <button className="finishQuiz" onClick={finishQuiz}>Finish Quiz</button> 
+            ) : (
+                // Move to the next question if it isn't the last one
+                <button className="nextQuestion" onClick={nextQuestion}>Next Question</button> 
+            )}
         </div>
     )
 }

@@ -1,12 +1,13 @@
 import './App.css';
 import Menu from './components/Menu';
 import Quiz from './components/Quiz';
+import EndScreen from './components/EndScreen';
 import { useState } from 'react';
 import { GameStateContext } from './helpers/Contexts';
 
 // Possible game stages: ['menu', 'playing', 'finished']
 function App() {
-  // Create global state to store which stage of the app you are in
+  // Create global state to store which stage of the app you are in. Initializes as the Menu
   const [gameState, setGameState] = useState("menu");
 
   // Create global state to store username
@@ -25,6 +26,7 @@ function App() {
         {gameState === 'menu' && <Menu />}
         {/* {userName} - Test that its working */}
         {gameState === 'playing' && <Quiz />}
+        {gameState === 'finished' && <EndScreen />}
       </GameStateContext.Provider>
       
       
