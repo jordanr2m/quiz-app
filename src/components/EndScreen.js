@@ -18,7 +18,7 @@ const EndScreen = () => {
     return (
         <div className="EndScreen">
             <h1>Quiz Complete!</h1>
-            <h2>{userName}, you got {score} out of {Questions.length} questions correct.</h2>
+            <h2>{userName.length === 0 ? "Quiz taker" : userName}, you got {score} out of {Questions.length} questions correct.</h2>
             <h2>Your grade is <u>{score / Questions.length * 100}%</u></h2>
             <button onClick={restartQuiz} className="restartQuiz">Restart Quiz</button>
         </div>

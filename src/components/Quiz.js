@@ -28,7 +28,7 @@ function Quiz() {
             setScore(score + 1);
         }
         // Don't need any else statement bc nothing happens to score if they guess wrong
-
+        console.log(score);
         // Increment value of currentQuestion by 1
         setCurrentQuestion(currentQuestion + 1)
     }
